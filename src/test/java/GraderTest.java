@@ -8,4 +8,19 @@ class GraderTest {
      var grader = new Grader();
      assertEquals('F',grader.determineLetterGrade(59));
     }
+    @Test
+    void fiftyNineShouldReturnD(){
+        var grader = new Grader();
+        assertEquals('D',grader.determineLetterGrade(69));
+    }
+
+    @Test
+    void NegativeIllegalArgumentException(){
+        var grader = new Grader();
+        assertThrows(IllegalArgumentException.class,
+                () -> {
+                    grader.determineLetterGrade(-1);
+                });
+
+    }
 }
